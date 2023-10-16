@@ -6,6 +6,7 @@ from kivy.animation import Animation
 from kivy.uix.button import Button
 import random
 from kivy.config import Config
+from kivy.uix.progressbar import ProgressBar
 
 Config.set('graphics', 'width', '960')
 Config.set('graphics', 'height', '540')
@@ -27,6 +28,14 @@ class ButtonApp(App):
         animation.start(btn)
         print("tickle")
             
+class progressBar(ProgressBar):
+    pb = ProgressBar(max=100, value = 0,
+                     pos_hint = {'center_x': .5, 'center_y': .5},
+                     size_hint_x = .8,
+                     size_hint = (.3, .3),
+                     pos = (0,0)
+                   )
+
     
 root = ButtonApp() 
     
